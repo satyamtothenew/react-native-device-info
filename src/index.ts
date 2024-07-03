@@ -459,13 +459,13 @@ export const [getFirstInstallTime, getFirstInstallTimeSync] = getSupportedPlatfo
   defaultValue: -1,
 });
 
-export const [getInstallReferrer, getInstallReferrerSync] = getSupportedPlatformInfoFunctions({
-  memoKey: 'installReferrer',
-  supportedPlatforms: ['android', 'windows', 'web'],
-  getter: () => RNDeviceInfo.getInstallReferrer(),
-  syncGetter: () => RNDeviceInfo.getInstallReferrerSync(),
-  defaultValue: 'unknown',
-});
+// export const [getInstallReferrer, getInstallReferrerSync] = getSupportedPlatformInfoFunctions({
+//   memoKey: 'installReferrer',
+//   supportedPlatforms: ['android', 'windows', 'web'],
+//   getter: () => RNDeviceInfo.getInstallReferrer(),
+//   syncGetter: () => RNDeviceInfo.getInstallReferrerSync(),
+//   defaultValue: 'unknown',
+// });
 
 export const [getLastUpdateTime, getLastUpdateTimeSync] = getSupportedPlatformInfoFunctions({
   memoKey: 'lastUpdateTime',
@@ -946,8 +946,8 @@ const DeviceInfo: DeviceInfoModule = {
   getIncrementalSync,
   getInstallerPackageName,
   getInstallerPackageNameSync,
-  getInstallReferrer,
-  getInstallReferrerSync,
+  // getInstallReferrer,
+  // getInstallReferrerSync,
   getInstanceId,
   getInstanceIdSync,
   getIpAddress,

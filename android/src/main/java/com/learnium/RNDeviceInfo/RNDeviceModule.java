@@ -79,7 +79,7 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
   private BroadcastReceiver headphoneConnectionReceiver;
   private BroadcastReceiver headphoneWiredConnectionReceiver;
   private BroadcastReceiver headphoneBluetoothConnectionReceiver;
-  private RNInstallReferrerClient installReferrerClient;
+  // private RNInstallReferrerClient installReferrerClient;
   private InputMethodManager inputMethodManager;
 
   private double mLastBatteryLevel = -1;
@@ -94,7 +94,7 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
     super(reactContext);
     this.deviceTypeResolver = new DeviceTypeResolver(reactContext);
     this.deviceIdResolver = new DeviceIdResolver(reactContext);
-    this.installReferrerClient = new RNInstallReferrerClient(reactContext.getBaseContext());
+    // this.installReferrerClient = new RNInstallReferrerClient(reactContext.getBaseContext());
     this.inputMethodManager = (InputMethodManager) reactContext.getSystemService(Context.INPUT_METHOD_SERVICE);
   }
 
@@ -706,13 +706,13 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void getAvailableLocationProviders(Promise p) { p.resolve(getAvailableLocationProvidersSync()); }
 
-  @ReactMethod(isBlockingSynchronousMethod = true)
-  public String getInstallReferrerSync() {
-    SharedPreferences sharedPref = getRNDISharedPreferences(getReactApplicationContext());
-    return sharedPref.getString("installReferrer", Build.UNKNOWN);
-  }
-  @ReactMethod
-  public void getInstallReferrer(Promise p) { p.resolve(getInstallReferrerSync()); }
+  // @ReactMethod(isBlockingSynchronousMethod = true)
+  // public String getInstallReferrerSync() {
+  //   SharedPreferences sharedPref = getRNDISharedPreferences(getReactApplicationContext());
+  //   return sharedPref.getString("installReferrer", Build.UNKNOWN);
+  // }
+  // @ReactMethod
+  // public void getInstallReferrer(Promise p) { p.resolve(getInstallReferrerSync()); }
 
   private PackageInfo getPackageInfo() throws Exception {
     return getReactApplicationContext().getPackageManager().getPackageInfo(getReactApplicationContext().getPackageName(), 0);
